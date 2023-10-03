@@ -60,8 +60,8 @@ all: main-build
 main-build: Practica1SETR2.elf secondary-outputs
 
 # Tool invocations
-Practica1SETR2.elf Practica1SETR2.map: $(OBJS) $(USER_OBJS) /Users/julianduran/STM32CubeIDE/workspace_1.11.2/Practica1SETR2/STM32L475VGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "Practica1SETR2.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/Users/julianduran/STM32CubeIDE/workspace_1.11.2/Practica1SETR2/STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Practica1SETR2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Practica1SETR2.elf Practica1SETR2.map: $(OBJS) $(USER_OBJS) /Users/julianduran/localGit/SETR/Practica1SETR2/STM32L475VGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "Practica1SETR2.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/Users/julianduran/localGit/SETR/Practica1SETR2/STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Practica1SETR2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

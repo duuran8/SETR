@@ -146,8 +146,8 @@ int main(void)
   /* Create the thread(s) */
   /* creation of defaultTask */
   defaultTaskHandle = osThreadNew(StartDefaultTask, NULL, &defaultTask_attributes);
-  CreateLedTask();
-
+  //CreateLedTask();
+  CreateLedTaskParam();
   /* USER CODE BEGIN RTOS_THREADS */
 
   /* add threads, ... */
@@ -165,11 +165,6 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  for(int i=0;i<4;i++){
-		  led_toggle(i);
-		  HAL_Delay(500);
-	  }
-
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
