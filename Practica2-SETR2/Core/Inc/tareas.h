@@ -3,5 +3,7 @@
 
 void CreateLedTask();
 void LedToggleTask(void *pArg);
-void CreateLedTaskParam();
+void CreateLedTaskParam(int param);
 void LedToggleTaskParam(void *pArg);
+void CreateLedTaskChain(int param);
+void LedTaskChain(void *pArg);
