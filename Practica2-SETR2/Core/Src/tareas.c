@@ -36,6 +36,6 @@ void LedTaskChain(void *pArg){
 			led_toggle(p);
 			vTaskDelay(1000);
 		}
-	CreateLedTaskChain(p=p+1);
+	CreateLedTaskChain((p=p+1)%4);
 	vTaskDelete(NULL);
 }
