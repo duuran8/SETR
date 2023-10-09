@@ -147,8 +147,12 @@ int main(void)
   /* creation of defaultTask */
   defaultTaskHandle = osThreadNew(StartDefaultTask, NULL, &defaultTask_attributes);
   //CreateLedTask();
+  /*
   int param=0;
   CreateLedTaskChain(param);
+  */
+  CreateButtonTask();
+  CreateLedTaskNotify();
   /* USER CODE BEGIN RTOS_THREADS */
 
   /* add threads, ... */

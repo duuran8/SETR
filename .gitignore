@@ -53,12 +53,18 @@ dkms.conf
 
 # STM32CubeIDE
 /.metadata/
-/.settings/
-/.cproject
-/.project
+*.settings/
+*.cproject
+*.project
+*.mxproject
 /Drivers/
 /Middlewares/
 /Binary/
+*.DS_Store
+*.ld
+*.ioc
+*.launch
+
 
 # User-specific folders
 /.idea/
