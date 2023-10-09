@@ -7,9 +7,11 @@ void CreateLedTask(){
 
 
 void LedToggleTask(void *pArg){
-	for(;;){
-		led_toggle(0);
-		vTaskDelay(1000);
+	while(1){
+		for(;;){
+			led_toggle(0);
+			vTaskDelay(1000);
+		}
 	}
 }
 
@@ -19,10 +21,12 @@ void CreateLedTaskParam(int param){
 	}
 
 void LedToggleTaskParam(void *pArg){
-	int p = (int *) pArg;
-	for(;;){
-		led_toggle(p);
-		vTaskDelay(1000);
+	while(1){
+		int p = (int *) pArg;
+		for(;;){
+			led_toggle(p);
+			vTaskDelay(500);
+		}
 	}
 }
 
@@ -31,11 +35,13 @@ void CreateLedTaskChain(int param){
 }
 
 void LedTaskChain(void *pArg){
-	int p = (int *) pArg;
-	for(int i=0;i<5;i++){
-			led_toggle(p);
-			vTaskDelay(1000);
-		}
-	CreateLedTaskChain((p=p+1)%4);
-	vTaskDelete(NULL);
+	while(1){
+		int p = (int *) pArg;
+		for(int i=0;i<5;i++){
+				led_toggle(p);
+				vTaskDelay(500);
+			}
+		CreateLedTaskChain((p=p+1)%4);
+		vTaskDelete(NULL);
+	}
 }
