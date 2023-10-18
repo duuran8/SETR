@@ -64,6 +64,7 @@ dkms.conf
 *.ld
 *.ioc
 *.launch
+/Debug/
 
 
 # User-specific folders
