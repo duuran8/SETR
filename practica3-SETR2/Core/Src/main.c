@@ -129,7 +129,8 @@ int main(void)
   while (1)
   {
 	  for (int i=0; i<1000;i++){
-		  printf("%d\r\n",i);
+		  float j= i +0.5;
+		  printf("%f\r\n",j);
 		  HAL_Delay(250);
 	  }
     /* USER CODE END WHILE */
