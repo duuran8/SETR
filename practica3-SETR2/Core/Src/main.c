@@ -72,6 +72,17 @@ static void MX_USB_OTG_FS_PCD_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+#ifdef __GNUC__
+/* With GCC/RAISONANCE, small printf (option LD Linker->Libraries->Small printf
+    set to 'Yes') calls __io_putchar() */
+#define PUTCHAR_PROTOTYPE int __io_putchar(int ch)
+	#else
+#define PUTCHAR_PROTOTYPE int fputc(int ch, FILE *f)
+	#endif /* __GNUC__ */
+	PUTCHAR_PROTOTYPE{
+		HAL_UART_Transmit(&huart1,(uint8_t *) &ch,1,1000);
+		return ch;
+		}
 
 
 /* USER CODE END 0 */
@@ -117,19 +128,24 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+  init_sensors();
   while (1)
   {
+	  /*
 	  for (int i=0; i<1000;i++){
 		  float j= i +0.5;
 		  printf("%f\r\n",j);
 		  HAL_Delay(250);
 	  }
+	  */
+
+	  Pressure_Test();
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
   }
-  /* USER CODE END 3 */
 }
+  /* USER CODE END 3 */
 
 /**
   * @brief System Clock Configuration

@@ -65,7 +65,8 @@ dkms.conf
 *.ioc
 *.launch
 /Debug/
-
+*.mk
+*.list
 
 # User-specific folders
 /.idea/

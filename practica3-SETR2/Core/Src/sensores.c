@@ -1,15 +1,18 @@
 #include "sensores.h"
 
 
+void init_sensors(void){
+	BSP_PSENSOR_Init();
+}
 
-#ifdef __GNUC__
-/* With GCC/RAISONANCE, small printf (option LD Linker->Libraries->Small printf
-    set to 'Yes') calls __io_putchar() */
-#define PUTCHAR_PROTOTYPE int __io_putchar(int ch)
-	#else
-#define PUTCHAR_PROTOTYPE int fputc(int ch, FILE *f)
-	#endif /* __GNUC__ */
-	PUTCHAR_PROTOTYPE{
-		HAL_UART_Transmit(&huart1,(uint8_t *) &ch,1,1000);
-		return ch;
-		}
+
+
+void Pressure_Test(void){
+	float press_value=0.;
+	while(1){
+		press_value= BSP_PSENSOR_ReadPressure();
+		printf("Presion: %.2f mBar\r\n", press_value);
+		HAL_Delay(1000);
+
+	}
+}
