@@ -9,10 +9,6 @@ void init_sensors(void){
 
 void Pressure_Test(void){
 	float press_value=0.;
-	while(1){
-		press_value= BSP_PSENSOR_ReadPressure();
-		printf("Presion: %.2f mBar\r\n", press_value);
-		HAL_Delay(1000);
-
-	}
+	press_value= BSP_PSENSOR_ReadPressure();
+	printf("Presion: %.2f mBar\r\n", press_value);
 }
