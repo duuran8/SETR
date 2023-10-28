@@ -57,14 +57,14 @@ dkms.conf
 *.cproject
 *.project
 *.mxproject
-Drivers/
-Middlewares/
-Binary/
+/Drivers/
+/Middlewares/
+/Binary/
 *.DS_Store
 *.ld
 *.ioc
 *.launch
-Debug/
+/Debug/
 *.mk
 *.list
 
