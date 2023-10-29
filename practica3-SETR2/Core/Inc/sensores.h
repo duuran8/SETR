@@ -19,3 +19,4 @@ void Pressure_Test(void);
 void Gyro_Test(void);
 void Magneto_Test(void);
 void Accelero_Test(void);
+void allTests(void);

@@ -49,3 +49,14 @@ void Gyro_Test(){
 	printf("Gyro_X: %.2f \r\n Gyro_Y: %.2f \r\n Gyro_Z: %.2f \r\n", pData[0], pData[1], pData[2]);
 }
 
+void allTests(){
+	printf("Todos los test: \r\n");
+	Pressure_Test();
+	Humidity_Test();
+	Temperature_Test();
+	Magneto_Test();
+	Accelero_Test();
+	Gyro_Test();
+	HAL_Delay(5000);
+}
+
