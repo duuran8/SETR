@@ -4,6 +4,8 @@
 void init_sensors(void){
 	BSP_PSENSOR_Init();
 	BSP_HSENSOR_Init();
+	BSP_TSENSOR_Init();
+
 }
 
 
@@ -19,4 +21,10 @@ void Humidity_Test(void){
 	float humidity_value=0.;
 	humidity_value= BSP_HSENSOR_ReadHumidity();
 	printf("Humedad: %.2f %%\r\n", humidity_value);
+}
+
+void Temperature_Test(void){
+	float temperature_value=0.;
+	temperature_value= BSP_TSENSOR_ReadTemp();
+	printf("Temperatura: %.2f ºC\r\n", temperature_value);
 }

@@ -141,6 +141,7 @@ int main(void)
 
 	  Pressure_Test();
 	  Humidity_Test();
+	  Temperature_Test();
 	  HAL_Delay(5000);
     /* USER CODE END WHILE */
 
