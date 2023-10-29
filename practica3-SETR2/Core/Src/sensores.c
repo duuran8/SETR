@@ -7,6 +7,7 @@ void init_sensors(void){
 	BSP_TSENSOR_Init();
 	BSP_MAGNETO_Init();
 	BSP_ACCELERO_Init();
+	BSP_GYRO_Init();
 }
 
 
@@ -40,5 +41,11 @@ void Accelero_Test(){
 	int16_t pData[3]={0};
 	BSP_ACCELERO_AccGetXYZ(pData);
 	printf("Accelero_X: %d \r\n Accelero_Y: %d \r\n Accelero_Z: %d \r\n", pData[0], pData[1], pData[2]);
+}
+
+void Gyro_Test(){
+	float pData[3]={0.};
+	BSP_GYRO_GetXYZ(pData);
+	printf("Gyro_X: %.2f \r\n Gyro_Y: %.2f \r\n Gyro_Z: %.2f \r\n", pData[0], pData[1], pData[2]);
 }
 

@@ -144,7 +144,8 @@ int main(void)
 	  //Humidity_Test();
 	  //Temperature_Test();
 	  //Magneto_Test();
-	  Accelero_Test();
+	  //Accelero_Test();
+	  Gyro_Test();
 	  HAL_Delay(5000);
     /* USER CODE END WHILE */
 
