@@ -132,6 +132,7 @@ int main(void)
   while (1)
   {
 	  /*
+	  // Test for printf
 	  for (int i=0; i<1000;i++){
 		  float j= i +0.5;
 		  printf("%f\r\n",j);
@@ -139,9 +140,10 @@ int main(void)
 	  }
 	  */
 
-	  Pressure_Test();
-	  Humidity_Test();
-	  Temperature_Test();
+	  //Pressure_Test();
+	  //Humidity_Test();
+	  //Temperature_Test();
+	  Magneto_Test();
 	  HAL_Delay(5000);
     /* USER CODE END WHILE */
 

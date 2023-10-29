@@ -5,7 +5,7 @@ void init_sensors(void){
 	BSP_PSENSOR_Init();
 	BSP_HSENSOR_Init();
 	BSP_TSENSOR_Init();
-
+	BSP_MAGNETO_Init();
 }
 
 
@@ -27,4 +27,10 @@ void Temperature_Test(void){
 	float temperature_value=0.;
 	temperature_value= BSP_TSENSOR_ReadTemp();
 	printf("Temperatura: %.2f ºC\r\n", temperature_value);
+}
+
+void Magneto_Test(){
+	int16_t pData[3]={0};
+	BSP_MAGNETO_GetXYZ(pData);
+	printf("Magneto_X: %d \r\n Magneto_Y: %d \r\n Magneto_Z: %d \r\n", pData[0], pData[1], pData[2]);
 }
