@@ -2,6 +2,7 @@
 
 SemaphoreHandle_t xSemaphore;
 
+
 void CreateSerialObjects(void){
 	xSemaphore = xSemaphoreCreateBinary();
 	xSemaphoreGive(xSemaphore);
@@ -14,12 +15,16 @@ void SerialSendByte(char data){
 void HAL_UART_TxCpltCallback(UART_HandleTypeDef* huart){
     BaseType_t xHigherPriorityTaskWoken = pdFALSE;
     xSemaphoreGiveFromISR(xSemaphore, &xHigherPriorityTaskWoken);
-
     // Si la función despierta una tarea de mayor prioridad, notificar al planificador
     portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
 
 }
- void prueba(void){
-	 printf("Hola amigo");
-
+void CreatePrueba(){
+	xTaskCreate(prueba, "prueba", 128, NULL, 1, NULL);
+}
+ void prueba(void *pArg){
+	 while(1){
+	 printf("Hola\r\n");
+	 vTaskDelay(2500);
+	 }
  }

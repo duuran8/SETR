@@ -14,4 +14,4 @@ void LedTaskChain(void *pArg);
 void CreateButtonTask();
 void ButtonTask(void *pArg);
 void CreateLedTaskNotify();
-void LedTaskNotify();
+void LedTaskNotify(void *pArg);

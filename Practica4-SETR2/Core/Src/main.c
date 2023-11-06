@@ -68,11 +68,10 @@ const osThreadAttr_t defaultTask_attributes = {
 #define PUTCHAR_PROTOTYPE int fputc(int ch, FILE *f)
 	#endif /* __GNUC__ */
 
-
 PUTCHAR_PROTOTYPE{
 	SerialSendByte(ch);
-		return ch;
-		}
+	return ch;
+}
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -133,6 +132,8 @@ int main(void)
   MX_USB_OTG_FS_PCD_Init();
   /* USER CODE BEGIN 2 */
 
+  CreateSerialObjects();
+  CreatePrueba();
   /* USER CODE END 2 */
 
   /* Init scheduler */
