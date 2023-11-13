@@ -32,6 +32,12 @@ extern "C" {
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+struct mydata{
+	int temper;
+	float barom;
+	float humid;
+};
+
 
 /* USER CODE END Includes */
 

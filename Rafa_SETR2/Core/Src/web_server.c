@@ -15,8 +15,8 @@
 extern float temperature;
 
 /* Update SSID and PASSWORD with own Access point settings */
-#define SSID     "MySSID"
-#define PASSWORD "MyPasswd"
+#define SSID     "iPhone de Julian"
+#define PASSWORD "pruebaprueba"
 #define PORT           80
 
 #define TERMINAL_USE
